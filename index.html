@@ -119,10 +119,8 @@
 
     /* breed section: full-image display, no crop */
     .breed-photo {
-      width:100%; border-radius:1rem; display:block;
-      object-fit:contain;          /* ← zeigt ganzes Bild */
-      background:#0a1020;          /* dunkler Hintergrund falls Letterbox */
-      box-shadow:0 8px 32px rgba(0,0,0,.4);
+      width:100%; height:100%; display:block;
+      object-fit:cover;
     }
 
     /* gallery: full image, no crop */
@@ -160,7 +158,84 @@
     .breed-card { transition:transform .4s ease, box-shadow .4s ease; }
     .breed-card:hover { transform:translateY(-5px); box-shadow:0 24px 56px rgba(200,146,42,.1); }
 
-    @media (prefers-reduced-motion:reduce) {
+    /* breed photo wrapper - improved styling */
+    .breed-photo-wrap {
+      overflow: hidden;
+      border-radius: 1rem;
+      display: block;
+      position: relative;
+      background: #0a1020;
+      box-shadow: 0 8px 32px rgba(0,0,0,.4);
+      transition: transform .45s ease, box-shadow .45s ease;
+      cursor: pointer;
+    }
+    .breed-photo-wrap:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(200,146,42,.14);
+    }
+    .breed-photo-wrap img {
+      transition: transform .45s ease;
+    }
+    .breed-photo-wrap:hover img {
+      transform: scale(1.03);
+    }
+
+    /* breed photo grid layout for circular arrangement */
+    .breed-photos-circular {
+      position: relative;
+      aspect-ratio: 1;
+      max-width: 420px;
+      margin: 0 auto;
+    }
+
+    .breed-photos-circular .breed-photo-wrap {
+      position: absolute;
+      border-radius: 1.5rem;
+    }
+
+    /* Main photo - top center, largest */
+    .breed-photos-circular .breed-photo-wrap:nth-child(1) {
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 65%;
+      aspect-ratio: 3/4;
+      z-index: 3;
+    }
+
+    /* Bottom left */
+    .breed-photos-circular .breed-photo-wrap:nth-child(2) {
+      bottom: 5%;
+      left: 5%;
+      width: 42%;
+      aspect-ratio: 1;
+      z-index: 2;
+    }
+
+    /* Bottom right */
+    .breed-photos-circular .breed-photo-wrap:nth-child(3) {
+      bottom: 5%;
+      right: 5%;
+      width: 42%;
+      aspect-ratio: 1;
+      z-index: 2;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .breed-photos-circular {
+        max-width: 360px;
+      }
+      .breed-photos-circular .breed-photo-wrap:nth-child(1) {
+        width: 60%;
+      }
+      .breed-photos-circular .breed-photo-wrap:nth-child(2),
+      .breed-photos-circular .breed-photo-wrap:nth-child(3) {
+        width: 38%;
+      }
+    }
+
+    @media (max-width: 480px) {
       .reveal{transition:none;opacity:1;transform:none}
       .animate-float{animation:none}
       *{transition-duration:.01ms !important}
@@ -368,12 +443,10 @@
       <div class="grid md:grid-cols-2 gap-14 items-start">
 
         <!-- Fotos -->
-        <div class="space-y-4" aria-label="Fotos Siam Old Style">
+        <div class="breed-photos-circular" aria-label="Fotos Siam Old Style">
           <div class="breed-photo-wrap"><img draggable="false" src="Bilder/Mama_Sealpoint.jpeg"     class="breed-photo" alt="Siam Old Style Katze, Sealpoint Färbung" loading="lazy" /></div>
-          <div class="grid grid-cols-2 gap-4 breed-grid-inner">
-            <div class="breed-photo-wrap"><img draggable="false" src="Bilder/Lilacpoint_2.jpeg"         class="breed-photo" alt="Siam Old Style Lilacpoint"   loading="lazy" /></div>
-            <div class="breed-photo-wrap"><img draggable="false" src="Bilder/Cinnemtnpoint_Mama.jpeg"   class="breed-photo" alt="Siam Old Style Cinnamonpoint" loading="lazy" /></div>
-          </div>
+          <div class="breed-photo-wrap"><img draggable="false" src="Bilder/Lilacpoint_2.jpeg"         class="breed-photo" alt="Siam Old Style Lilacpoint"   loading="lazy" /></div>
+          <div class="breed-photo-wrap"><img draggable="false" src="Bilder/Cinnemtnpoint_Mama.jpeg"   class="breed-photo" alt="Siam Old Style Cinnamonpoint" loading="lazy" /></div>
         </div>
 
         <!-- Text -->
@@ -434,12 +507,10 @@
         </div>
 
         <!-- Fotos rechts -->
-        <div class="space-y-4 order-1 md:order-2" aria-label="Fotos Russisch Blau">
+        <div class="breed-photos-circular order-1 md:order-2" aria-label="Fotos Russisch Blau">
           <div class="breed-photo-wrap"><img draggable="false" src="Bilder/Mama_russischblau_1.jpeg" class="breed-photo" alt="Russisch Blau Katze"        loading="lazy" /></div>
-          <div class="grid grid-cols-2 gap-4 breed-grid-inner">
-            <div class="breed-photo-wrap"><img draggable="false" src="Bilder/Russischblau_2.jpeg"   class="breed-photo" alt="Russisch Blau Portrait"    loading="lazy" /></div>
-            <div class="breed-photo-wrap"><img draggable="false" src="Bilder/rusischblau_1.jpeg"     class="breed-photo" alt="Russisch Blau Katze sitzend" loading="lazy" /></div>
-          </div>
+          <div class="breed-photo-wrap"><img draggable="false" src="Bilder/Russischblau_2.jpeg"   class="breed-photo" alt="Russisch Blau Portrait"    loading="lazy" /></div>
+          <div class="breed-photo-wrap"><img draggable="false" src="Bilder/rusischblau_1.jpeg"     class="breed-photo" alt="Russisch Blau Katze sitzend" loading="lazy" /></div>
         </div>
       </div>
     </article>
@@ -700,8 +771,14 @@
     .hero-frame:nth-child(1) { width: 160px !important; height: 210px !important; right: 8px !important; }
     .hero-frame:nth-child(2) { width: 170px !important; height: 225px !important; left: 4px !important; }
 
-    /* Rassefotos: 1 Spalte auf Mobile */
-    .breed-grid-inner { grid-template-columns: 1fr 1fr !important; }
+    /* Rassefotos optimieren */
+    .breed-photos-circular {
+      max-width: 340px !important;
+    }
+    .breed-photos-circular .breed-photo-wrap:nth-child(2),
+    .breed-photos-circular .breed-photo-wrap:nth-child(3) {
+      width: 35%;
+    }
 
     /* Galerie: 2 Spalten auf Mobile bereits gesetzt */
 
