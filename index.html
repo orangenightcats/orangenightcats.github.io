@@ -114,8 +114,12 @@
     .hero-frame {
       position:relative; border-radius:1.25rem; overflow:hidden;
       box-shadow:0 20px 60px rgba(0,0,0,.5);
+      transition:transform .35s ease, box-shadow .35s ease;
     }
+    .hero-frame:hover { transform:translateY(-4px); box-shadow:0 24px 68px rgba(0,0,0,.5); }
     .hero-frame img { width:100%; height:100%; object-fit:cover; display:block; }
+    .hero-link { display:block; color:inherit; text-decoration:none; }
+    .hero-link:focus-visible { outline:2px solid rgba(232,168,62,.9); outline-offset:4px; }
 
     /* breed section: full-image display, no crop */
     .breed-photo {
@@ -328,17 +332,23 @@
 
     <!-- Photo collage -->
     <div class="relative h-[400px] md:h-[460px] reveal" style="animation-delay:.1s" aria-label="Fotos unserer Katzen">
-      <div class="hero-frame animate-float absolute" style="width:195px;height:255px;right:16px;top:12px;z-index:3;border:1px solid rgba(74,127,165,.28);animation-delay:0s">
-        <img draggable="false" src="Bilder/Mama_russischblau_1.jpeg" alt="Russisch Blau Katze" loading="eager" />
-        <div class="absolute bottom-3 left-3 text-xs font-sans font-medium tracking-widest uppercase" style="color:rgba(147,197,253,.9);text-shadow:0 1px 4px rgba(0,0,0,.8)">Russisch Blau</div>
-      </div>
-      <div class="hero-frame animate-float absolute" style="width:215px;height:280px;left:10px;bottom:-4px;z-index:2;border:1px solid rgba(200,146,42,.22);animation-delay:1.4s">
-        <img draggable="false" src="Bilder/Mama_Sealpoint.jpeg" alt="Siam Old Style Katze" loading="eager" />
-        <div class="absolute bottom-3 left-3 text-xs font-sans font-medium tracking-widest uppercase" style="color:rgba(232,168,62,.9);text-shadow:0 1px 4px rgba(0,0,0,.8)">Siam Old Style</div>
-      </div>
-      <div class="hero-frame animate-float absolute" style="width:125px;height:150px;left:60px;top:16px;z-index:4;border:1px solid rgba(255,255,255,.1);animation-delay:2.8s">
-        <img draggable="false" src="Bilder/Lilacpoint.jpeg" alt="Siam Lilacpoint" loading="lazy" />
-      </div>
+      <a href="#rassen" class="hero-link" aria-label="Zur Rassen-Sektion scrollen">
+        <div class="hero-frame animate-float absolute" style="width:195px;height:255px;right:16px;top:12px;z-index:3;border:1px solid rgba(74,127,165,.28);animation-delay:0s">
+          <img draggable="false" src="Bilder/Mama_russischblau_1.jpeg" alt="Russisch Blau Katze" loading="eager" />
+          <div class="absolute bottom-3 left-3 text-xs font-sans font-medium tracking-widest uppercase" style="color:rgba(147,197,253,.9);text-shadow:0 1px 4px rgba(0,0,0,.8)">Russisch Blau</div>
+        </div>
+      </a>
+      <a href="#rassen" class="hero-link" aria-label="Zur Rassen-Sektion scrollen">
+        <div class="hero-frame animate-float absolute" style="width:215px;height:280px;left:10px;bottom:-4px;z-index:2;border:1px solid rgba(200,146,42,.22);animation-delay:1.4s">
+          <img draggable="false" src="Bilder/Mama_Sealpoint.jpeg" alt="Siam Old Style Katze" loading="eager" />
+          <div class="absolute bottom-3 left-3 text-xs font-sans font-medium tracking-widest uppercase" style="color:rgba(232,168,62,.9);text-shadow:0 1px 4px rgba(0,0,0,.8)">Siam Old Style</div>
+        </div>
+      </a>
+      <a href="#rassen" class="hero-link" aria-label="Zur Rassen-Sektion scrollen">
+        <div class="hero-frame animate-float absolute" style="width:125px;height:150px;left:60px;top:16px;z-index:4;border:1px solid rgba(255,255,255,.1);animation-delay:2.8s">
+          <img draggable="false" src="Bilder/Lilacpoint.jpeg" alt="Siam Lilacpoint" loading="lazy" />
+        </div>
+      </a>
       <div class="absolute w-52 h-52 rounded-full pointer-events-none" style="background:radial-gradient(circle,rgba(200,146,42,.11),transparent);bottom:-10px;left:20px" aria-hidden="true"></div>
       <div class="absolute w-40 h-40 rounded-full pointer-events-none" style="background:radial-gradient(circle,rgba(74,127,165,.13),transparent);top:0;right:0" aria-hidden="true"></div>
     </div>
