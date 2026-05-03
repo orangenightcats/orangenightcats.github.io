@@ -180,58 +180,45 @@
       transform: scale(1.03);
     }
 
-    /* breed photo grid layout for circular arrangement */
-    .breed-photos-circular {
-      position: relative;
-      aspect-ratio: 1;
-      max-width: 420px;
+    /* breed photo layout: large top image with two smaller bottom images */
+    .breed-photos-layout {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-rows: auto auto;
+      gap: 1rem;
+      justify-items: center;
+      align-items: end;
+      max-width: 520px;
       margin: 0 auto;
     }
 
-    .breed-photos-circular .breed-photo-wrap {
-      position: absolute;
-      border-radius: 1.5rem;
+    .breed-photos-layout .breed-photo-wrap {
+      position: relative;
+      width: 100%;
+      max-width: 360px;
     }
 
-    /* Main photo - top center, largest */
-    .breed-photos-circular .breed-photo-wrap:nth-child(1) {
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 65%;
-      aspect-ratio: 3/4;
-      z-index: 3;
+    .breed-photos-layout .breed-photo-wrap:nth-child(1) {
+      grid-column: 1 / -1;
+      width: 100%;
+      max-width: 420px;
     }
 
-    /* Bottom left */
-    .breed-photos-circular .breed-photo-wrap:nth-child(2) {
-      bottom: 5%;
-      left: 5%;
-      width: 42%;
-      aspect-ratio: 1;
-      z-index: 2;
+    .breed-photos-layout .breed-photo-wrap:nth-child(2),
+    .breed-photos-layout .breed-photo-wrap:nth-child(3) {
+      width: calc(100% - 0px);
+      max-width: 240px;
     }
 
-    /* Bottom right */
-    .breed-photos-circular .breed-photo-wrap:nth-child(3) {
-      bottom: 5%;
-      right: 5%;
-      width: 42%;
-      aspect-ratio: 1;
-      z-index: 2;
-    }
-
-    /* Responsive adjustments */
     @media (max-width: 768px) {
-      .breed-photos-circular {
-        max-width: 360px;
+      .breed-photos-layout {
+        grid-template-columns: 1fr;
       }
-      .breed-photos-circular .breed-photo-wrap:nth-child(1) {
-        width: 60%;
+      .breed-photos-layout .breed-photo-wrap {
+        max-width: 100%;
       }
-      .breed-photos-circular .breed-photo-wrap:nth-child(2),
-      .breed-photos-circular .breed-photo-wrap:nth-child(3) {
-        width: 38%;
+      .breed-photos-layout .breed-photo-wrap:nth-child(1) {
+        width: 100%;
       }
     }
 
@@ -443,7 +430,7 @@
       <div class="grid md:grid-cols-2 gap-14 items-start">
 
         <!-- Fotos -->
-        <div class="breed-photos-circular" aria-label="Fotos Siam Old Style">
+        <div class="breed-photos-layout" aria-label="Fotos Siam Old Style">
           <div class="breed-photo-wrap"><img draggable="false" src="Bilder/Mama_Sealpoint.jpeg"     class="breed-photo" alt="Siam Old Style Katze, Sealpoint Färbung" loading="lazy" /></div>
           <div class="breed-photo-wrap"><img draggable="false" src="Bilder/Lilacpoint_2.jpeg"         class="breed-photo" alt="Siam Old Style Lilacpoint"   loading="lazy" /></div>
           <div class="breed-photo-wrap"><img draggable="false" src="Bilder/Cinnemtnpoint_Mama.jpeg"   class="breed-photo" alt="Siam Old Style Cinnamonpoint" loading="lazy" /></div>
@@ -507,7 +494,7 @@
         </div>
 
         <!-- Fotos rechts -->
-        <div class="breed-photos-circular order-1 md:order-2" aria-label="Fotos Russisch Blau">
+        <div class="breed-photos-layout order-1 md:order-2" aria-label="Fotos Russisch Blau">
           <div class="breed-photo-wrap"><img draggable="false" src="Bilder/Mama_russischblau_1.jpeg" class="breed-photo" alt="Russisch Blau Katze"        loading="lazy" /></div>
           <div class="breed-photo-wrap"><img draggable="false" src="Bilder/Russischblau_2.jpeg"   class="breed-photo" alt="Russisch Blau Portrait"    loading="lazy" /></div>
           <div class="breed-photo-wrap"><img draggable="false" src="Bilder/rusischblau_1.jpeg"     class="breed-photo" alt="Russisch Blau Katze sitzend" loading="lazy" /></div>
