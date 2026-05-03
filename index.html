@@ -129,7 +129,7 @@
       margin-bottom: 1rem;
       border-radius:.875rem;
       overflow:hidden;
-      cursor:zoom-in;
+      cursor:default;
       transition:transform .35s ease, box-shadow .35s ease;
       background:#0a1020;
     }
@@ -167,7 +167,7 @@
       background: #0a1020;
       box-shadow: 0 8px 32px rgba(0,0,0,.4);
       transition: transform .45s ease, box-shadow .45s ease;
-      cursor: pointer;
+      cursor: default;
     }
     .breed-photo-wrap:hover {
       transform: translateY(-4px);
@@ -720,7 +720,7 @@
   document.querySelectorAll('.gallery-wrap').forEach(wrap=>{
     const img=wrap.querySelector('img');
     wrap.addEventListener('click',()=>openLb(img.src,img.alt));
-    wrap.style.cursor='zoom-in';
+    wrap.style.cursor='default';
   });
   document.getElementById('lbClose').addEventListener('click',closeLb);
   lb.addEventListener('click',e=>{if(e.target===lb)closeLb();});
@@ -759,7 +759,7 @@
     inset: 0;
     z-index: 2;
     background: transparent;
-    cursor: zoom-in;
+    cursor: default;
   }
   .gallery-wrap img, .hero-frame img { pointer-events: none; }
 
