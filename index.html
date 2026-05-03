@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <title>OrangeNight Cats – Siam Old Style & Russisch Blau | Private Liebhaberseite</title>
+  <meta name="description" content="OrangeNight Cats – Private Liebhaberseite für Siam Old Style und Russisch Blau Katzen. Rasseportraits, Fotos und Wissenswertes zu zwei der elegantesten Katzenrassen." />
+  <meta name="keywords" content="Siam Old Style, Traditional Siamese, Russisch Blau, Russian Blue, Katzenliebhaber, Siamkatze, Rassekatze Deutschland" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="OrangeNight Cats" />
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:title"       content="OrangeNight Cats – Siam Old Style & Russisch Blau" />
+  <meta property="og:description" content="Private Liebhaberseite für zwei der elegantesten Katzenrassen der Welt." />
+  <meta property="og:image"       content="Bilder/Logo_social.jpeg" />
+  <meta property="og:locale"      content="de_DE" />
+
+  <!-- Schema.org – Person/privat, kein Unternehmen -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "OrangeNight Cats",
+    "description": "Private, nicht-kommerzielle Liebhaberseite für Siam Old Style und Russisch Blau Katzen",
+    "url": "https://orangenightcats.de",
+    "sameAs": ["https://www.instagram.com/orangenightcats"]
+  }
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['Cormorant Garamond', 'Georgia', 'serif'],
+            sans:  ['Montserrat', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            midnight: '#080D1A',
+            navy:     '#0F1E3D',
+            gold:     '#C8922A',
+            amber:    '#E8A83E',
+            cream:    '#F9F4EC',
+            steel:    '#4A7FA5',
+          },
+          keyframes: {
+            float: { '0%,100%': { transform:'translateY(0)' }, '50%': { transform:'translateY(-10px)' } },
+            twinkle: { '0%,100%': { opacity:'.1' }, '50%': { opacity:'.65' } },
+          },
+          animation: {
+            float:   'float 7s ease-in-out infinite',
+            twinkle: 'twinkle 4s ease-in-out infinite',
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: #080D1A;
+      color: #F9F4EC;
+      font-family: 'Montserrat', sans-serif;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    /* grain overlay */
+    body::after {
+      content: '';
+      position: fixed; inset: 0;
+      pointer-events: none; z-index: 999; opacity: .22;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.05'/%3E%3C/svg%3E");
+    }
+
+    .glass       { background:rgba(255,255,255,.045); backdrop-filter:blur(18px); -webkit-backdrop-filter:blur(18px); border:1px solid rgba(255,255,255,.08); }
+    .glass-gold  { background:rgba(200,146,42,.07);   backdrop-filter:blur(18px); -webkit-backdrop-filter:blur(18px); border:1px solid rgba(200,146,42,.18); }
+    .glass-blue  { background:rgba(74,127,165,.07);   backdrop-filter:blur(18px); -webkit-backdrop-filter:blur(18px); border:1px solid rgba(74,127,165,.2);  }
+
+    .gold-text {
+      background: linear-gradient(135deg,#F0B84A,#C8922A 55%,#A07018);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .divider { height:1px; background:linear-gradient(90deg,transparent,#C8922A,transparent); }
+
+    /* nav */
+    .nav-link {
+      font-size:.72rem; font-weight:500; letter-spacing:.12em; text-transform:uppercase;
+      color:rgba(249,244,236,.62); position:relative; transition:color .2s;
+    }
+    .nav-link::after {
+      content:''; position:absolute; bottom:-3px; left:0; width:0; height:1px;
+      background:linear-gradient(90deg,#C8922A,#E8A83E); transition:width .3s;
+    }
+    .nav-link:hover { color:#E8A83E; }
+    .nav-link:hover::after { width:100%; }
+
+    /* reveal */
+    .reveal { opacity:0; transform:translateY(22px); transition:opacity .7s ease,transform .7s ease; }
+    .reveal.visible { opacity:1; transform:translateY(0); }
+
+    /* hero photo frame */
+    .hero-frame {
+      position:relative; border-radius:1.25rem; overflow:hidden;
+      box-shadow:0 20px 60px rgba(0,0,0,.5);
+    }
+    .hero-frame img { width:100%; height:100%; object-fit:cover; display:block; }
+
+    /* breed section: full-image display, no crop */
+    .breed-photo {
+      width:100%; border-radius:1rem; display:block;
+      object-fit:contain;          /* ← zeigt ganzes Bild */
+      background:#0a1020;          /* dunkler Hintergrund falls Letterbox */
+      box-shadow:0 8px 32px rgba(0,0,0,.4);
+    }
+
+    /* gallery: full image, no crop */
+    .gallery-wrap {
+      break-inside: avoid;
+      margin-bottom: 1rem;
+      border-radius:.875rem;
+      overflow:hidden;
+      cursor:zoom-in;
+      transition:transform .35s ease, box-shadow .35s ease;
+      background:#0a1020;
+    }
+    .gallery-wrap:hover { transform:translateY(-4px); box-shadow:0 16px 40px rgba(200,146,42,.14); }
+    .gallery-wrap img {
+      width:100%; height:auto;     /* ← ganzes Bild, keine Beschneidung */
+      display:block;
+      transition:transform .45s ease;
+    }
+    .gallery-wrap:hover img { transform:scale(1.03); }
+
+    /* lightbox */
+    #lightbox {
+      display:none; position:fixed; inset:0; z-index:9999;
+      background:rgba(8,13,26,.93); backdrop-filter:blur(14px);
+      align-items:center; justify-content:center;
+    }
+    #lightbox.open { display:flex; }
+    #lightbox img { max-width:92vw; max-height:90vh; object-fit:contain; border-radius:.875rem; box-shadow:0 30px 80px rgba(0,0,0,.65); }
+
+    /* paw bullets */
+    .dot { width:5px;height:5px;border-radius:50%;flex-shrink:0;background:#C8922A; }
+    .dot-blue { background:#4A7FA5; }
+
+    /* breed card hover */
+    .breed-card { transition:transform .4s ease, box-shadow .4s ease; }
+    .breed-card:hover { transform:translateY(-5px); box-shadow:0 24px 56px rgba(200,146,42,.1); }
+
+    @media (prefers-reduced-motion:reduce) {
+      .reveal{transition:none;opacity:1;transform:none}
+      .animate-float{animation:none}
+      *{transition-duration:.01ms !important}
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════
+     NAV
+═══════════════════════════════════════ -->
+<nav class="fixed top-4 left-4 right-4 z-50 glass rounded-2xl px-5 py-3 flex items-center justify-between" role="navigation" aria-label="Hauptnavigation">
+
+  <a href="#hero" class="flex items-center gap-2.5 focus:outline-none focus:ring-2 focus:ring-gold/40 rounded-lg" aria-label="OrangeNight Cats Startseite">
+    <img draggable="false" src="Bilder/Logo.jpeg" alt="OrangeNight Cats Logo" class="w-9 h-9 rounded-lg object-cover" loading="eager" />
+    <span class="font-serif text-sm font-semibold" style="color:#E8A83E">OrangeNight</span>
+    <span class="font-serif text-sm font-light text-cream/65">Cats</span>
+  </a>
+
+  <div class="hidden md:flex items-center gap-7">
+    <a href="#ueber"   class="nav-link">Über uns</a>
+    <a href="#rassen"  class="nav-link">Rassen</a>
+    <a href="#galerie" class="nav-link">Galerie</a>
+    <a href="#kontakt" class="nav-link">Kontakt</a>
+  </div>
+
+  <div class="hidden md:flex items-center gap-2">
+    <a href="https://www.instagram.com/orangenightcats" target="_blank" rel="noopener noreferrer"
+       class="flex items-center gap-2 px-3 py-2 rounded-xl glass-gold text-amber text-xs font-medium tracking-widest uppercase hover:bg-gold/20 transition-all focus:outline-none focus:ring-2 focus:ring-gold/40"
+       aria-label="OrangeNightCats auf Instagram">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      Instagram
+    </a>
+    <a href="https://www.tiktok.com/@orange.night.cats" target="_blank" rel="noopener noreferrer"
+       class="flex items-center gap-2 px-3 py-2 rounded-xl glass text-cream/70 text-xs font-medium tracking-widest uppercase hover:text-amber transition-all focus:outline-none focus:ring-2 focus:ring-cream/20"
+       aria-label="OrangeNightCats auf TikTok">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.76a4.85 4.85 0 01-1.01-.07z"/></svg>
+      TikTok
+    </a>
+  </div>
+
+  <button id="menuBtn" class="md:hidden p-2 text-cream/55 hover:text-amber transition-colors focus:outline-none focus:ring-2 focus:ring-gold/30 rounded-lg" aria-label="Menü öffnen" aria-expanded="false">
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"/></svg>
+  </button>
+</nav>
+
+<div id="mobileMenu" class="fixed inset-x-4 top-[4.5rem] z-40 glass rounded-2xl p-6 hidden" role="menu">
+  <div class="flex flex-col gap-5">
+    <a href="#ueber"   class="nav-link" role="menuitem">Über uns</a>
+    <a href="#rassen"  class="nav-link" role="menuitem">Rassen</a>
+    <a href="#galerie" class="nav-link" role="menuitem">Galerie</a>
+    <a href="#kontakt" class="nav-link" role="menuitem">Kontakt</a>
+    <a href="https://www.instagram.com/orangenightcats" target="_blank" rel="noopener noreferrer"
+       class="flex items-center gap-2 text-amber text-xs font-medium tracking-widest uppercase" role="menuitem">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      @orangenightcats
+    </a>
+    <a href="https://www.tiktok.com/@orange.night.cats" target="_blank" rel="noopener noreferrer"
+       class="flex items-center gap-2 text-cream/65 text-xs font-medium tracking-widest uppercase" role="menuitem">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.76a4.85 4.85 0 01-1.01-.07z"/></svg>
+      @orange.night.cats
+    </a>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════
+     HERO
+═══════════════════════════════════════ -->
+<section id="hero" class="relative min-h-screen flex items-center overflow-hidden" aria-label="Willkommen">
+
+  <div class="absolute inset-0 pointer-events-none" aria-hidden="true"
+       style="background:radial-gradient(ellipse 75% 55% at 65% 100%,rgba(200,146,42,.12) 0%,transparent 65%),
+              radial-gradient(ellipse 50% 45% at 5%  55%, rgba(74,127,165,.13) 0%,transparent 60%),
+              linear-gradient(170deg,#080D1A 0%,#0F1E3D 52%,#080D1A 100%)"></div>
+
+  <div id="starField" class="absolute inset-0 pointer-events-none" aria-hidden="true"></div>
+
+  <div class="relative z-10 w-full max-w-7xl mx-auto px-6 pt-28 pb-16 grid md:grid-cols-2 gap-14 items-center">
+
+    <!-- Text -->
+    <div>
+      <div class="inline-flex items-center gap-3 mb-8 reveal">
+        <div class="divider w-10"></div>
+        <span class="text-xs font-medium tracking-[.22em] uppercase text-amber/72">Private Liebhaberseite · Leverkusen</span>
+      </div>
+      <h1 class="font-serif font-light leading-none mb-6 reveal" style="animation-delay:.08s; padding-bottom:0.15em">
+        <span class="block gold-text font-semibold italic" style="font-size:clamp(2.8rem,7vw,5rem); padding:0.1em 0.05em">OrangeNight</span>
+        <span class="block text-cream/80 font-light mt-1" style="font-size:clamp(2.2rem,5.5vw,4rem)">Cats</span>
+      </h1>
+      <p class="font-sans text-base font-light text-cream/58 leading-relaxed max-w-md mb-8 reveal" style="animation-delay:.16s">
+        Unsere Leidenschaft gehört zwei außergewöhnlichen Rassen —
+        <span class="text-amber/88 font-medium">Siam Old Style</span> und
+        <span class="text-steel font-medium">Russisch Blau</span>.
+        Eine private Seite voller Liebe zur Katze.
+      </p>
+      <div class="flex flex-wrap gap-4 reveal" style="animation-delay:.22s">
+        <a href="#rassen" class="px-7 py-3 rounded-xl text-sm font-medium tracking-widest uppercase transition-all hover:opacity-88 focus:outline-none focus:ring-2 focus:ring-gold/50"
+           style="background:linear-gradient(135deg,#C8922A,#E8A83E);color:#080D1A">Unsere Rassen</a>
+        <a href="#galerie" class="px-7 py-3 rounded-xl glass text-sm font-medium tracking-widest uppercase text-cream/72 hover:text-amber transition-all focus:outline-none focus:ring-2 focus:ring-cream/20">Galerie</a>
+      </div>
+    </div>
+
+    <!-- Photo collage -->
+    <div class="relative h-[400px] md:h-[460px] reveal" style="animation-delay:.1s" aria-label="Fotos unserer Katzen">
+      <div class="hero-frame animate-float absolute" style="width:195px;height:255px;right:16px;top:20px;z-index:1;border:1px solid rgba(74,127,165,.28);animation-delay:0s">
+        <img draggable="false" src="Bilder/Mama_russischblau_1.jpeg" alt="Russisch Blau Katze" loading="eager" />
+        <div class="absolute bottom-3 left-3 text-xs font-sans font-medium tracking-widest uppercase" style="color:rgba(147,197,253,.9);text-shadow:0 1px 4px rgba(0,0,0,.8)">Russisch Blau</div>
+      </div>
+      <div class="hero-frame animate-float absolute" style="width:215px;height:280px;left:8px;bottom:14px;z-index:2;border:1px solid rgba(200,146,42,.22);animation-delay:1.4s">
+        <img draggable="false" src="Bilder/Mama_Sealpoint.jpeg" alt="Siam Old Style Katze" loading="eager" />
+        <div class="absolute bottom-3 left-3 text-xs font-sans font-medium tracking-widest uppercase" style="color:rgba(232,168,62,.9);text-shadow:0 1px 4px rgba(0,0,0,.8)">Siam Old Style</div>
+      </div>
+      <div class="hero-frame animate-float absolute" style="width:125px;height:150px;left:56px;top:12px;z-index:3;border:1px solid rgba(255,255,255,.1);animation-delay:2.8s">
+        <img draggable="false" src="Bilder/Lilacpoint.jpeg" alt="Siam Lilacpoint" loading="lazy" />
+      </div>
+      <div class="absolute w-52 h-52 rounded-full pointer-events-none" style="background:radial-gradient(circle,rgba(200,146,42,.11),transparent);bottom:-10px;left:20px" aria-hidden="true"></div>
+      <div class="absolute w-40 h-40 rounded-full pointer-events-none" style="background:radial-gradient(circle,rgba(74,127,165,.13),transparent);top:0;right:0" aria-hidden="true"></div>
+    </div>
+  </div>
+
+  <div class="absolute bottom-7 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 opacity-32 pointer-events-none" aria-hidden="true">
+    <span class="text-xs tracking-widest uppercase font-sans text-cream/45">Entdecken</span>
+    <div class="w-px h-10 bg-gradient-to-b from-cream/35 to-transparent"></div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     ÜBER UNS
+═══════════════════════════════════════ -->
+<section id="ueber" class="py-28 px-6" aria-labelledby="ueber-heading">
+  <div class="max-w-5xl mx-auto">
+
+    <div class="text-center mb-16 reveal">
+      <div class="inline-flex items-center gap-3 mb-5">
+        <div class="divider w-8"></div>
+        <span class="text-xs font-medium tracking-[.2em] uppercase text-amber/68">Über uns</span>
+        <div class="divider w-8"></div>
+      </div>
+      <h2 id="ueber-heading" class="font-serif text-4xl md:text-5xl font-light text-cream/94 mb-5">
+        Katzen mit <span class="gold-text font-semibold italic">Herz</span>
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      <article class="glass rounded-2xl p-7 breed-card">
+        <div class="mb-5" aria-hidden="true">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M16 3C9.373 3 4 8.373 4 15c0 4.77 2.6 8.94 6.44 11.17V29h11.12v-2.83C25.4 23.94 28 19.77 28 15c0-6.627-5.373-12-12-12z" fill="url(#i1)" opacity=".88"/><ellipse cx="12" cy="14" rx="1.8" ry="2" fill="#080D1A"/><ellipse cx="20" cy="14" rx="1.8" ry="2" fill="#080D1A"/><path d="M13 19.5q3 2.5 6 0" stroke="#080D1A" stroke-width="1.1" stroke-linecap="round" fill="none"/><defs><linearGradient id="i1" x1="4" y1="3" x2="28" y2="29"><stop stop-color="#E8A83E"/><stop offset="1" stop-color="#C8922A"/></linearGradient></defs></svg>
+        </div>
+        <h3 class="font-serif text-xl font-semibold text-cream/94 mb-3">Echte Leidenschaft</h3>
+        <p class="font-sans text-sm text-cream/52 leading-relaxed">Wir leben mit unseren Katzen,sie sind Teil unserer Familie, nicht Objekte. Diese Seite entstand aus echter Begeisterung für zwei außergewöhnliche Rassen.</p>
+      </article>
+
+      <article class="glass rounded-2xl p-7 breed-card" style="border-color:rgba(200,146,42,.18)">
+        <div class="mb-5" aria-hidden="true">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M16 4l-2 5H9l4.5 3.3-1.7 5.2L16 14l4.2 3.5-1.7-5.2L23 9h-5z" fill="url(#i2)" opacity=".9"/><circle cx="16" cy="16" r="12" fill="url(#i2)" opacity=".12"/><defs><linearGradient id="i2" x1="4" y1="4" x2="28" y2="28"><stop stop-color="#E8A83E"/><stop offset="1" stop-color="#C8922A"/></linearGradient></defs></svg>
+        </div>
+        <h3 class="font-serif text-xl font-semibold text-cream/94 mb-3">Gesundheit an erster Stelle</h3>
+        <p class="font-sans text-sm text-cream/52 leading-relaxed">Das Wohlbefinden unserer Katzen hat oberste Priorität. Regelmäßige Tierarztbesuche und Gentests gehören für uns selbstverständlich dazu.</p>
+      </article>
+
+      <article class="glass rounded-2xl p-7 breed-card">
+        <div class="mb-5" aria-hidden="true">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M16 4C9.37 4 4 9.37 4 16s5.37 12 12 12 12-5.37 12-12S22.63 4 16 4z" fill="url(#i3)" opacity=".15"/><path d="M10 16h12M16 10v12" stroke="url(#i3)" stroke-width="2.2" stroke-linecap="round"/><defs><linearGradient id="i3" x1="4" y1="4" x2="28" y2="28"><stop stop-color="#E8A83E"/><stop offset="1" stop-color="#C8922A"/></linearGradient></defs></svg>
+        </div>
+        <h3 class="font-serif text-xl font-semibold text-cream/94 mb-3">Wissen teilen</h3>
+        <p class="font-sans text-sm text-cream/52 leading-relaxed">Auf dieser Seite und unserem Instagram-Kanal teilen wir unser Wissen und unsere Erfahrungen rund um Siam Old Style und Russisch Blau.</p>
+      </article>
+    </div>
+
+    <!-- Private site notice -->
+    <div class="mt-8 glass-gold rounded-2xl px-6 py-4 flex items-start gap-4 reveal">
+      <svg class="flex-shrink-0 mt-0.5" width="18" height="18" viewBox="0 0 24 24" fill="#E8A83E" aria-hidden="true"><path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm8.706-1.442c1.146-.573 2.437.463 2.126 1.706l-.709 2.836.042-.02a.75.75 0 01.67 1.34l-.04.022c-1.147.573-2.438-.463-2.127-1.706l.71-2.836-.042.02a.75.75 0 11-.671-1.34l.041-.022zM12 9a.75.75 0 100-1.5.75.75 0 000 1.5z" clip-rule="evenodd"/></svg>
+      <p class="font-sans text-xs text-cream/55 leading-relaxed">
+        <strong class="text-cream/80 font-medium">Hinweis:</strong> Dies ist eine private, nicht-kommerzielle Liebhaberseite. Es werden keine Waren oder Dienstleistungen angeboten oder verkauft.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     RASSEN
+═══════════════════════════════════════ -->
+<section id="rassen" class="py-28 px-6 relative overflow-hidden" aria-labelledby="rassen-heading">
+
+  <div class="absolute inset-0 pointer-events-none" aria-hidden="true"
+       style="background:radial-gradient(ellipse 65% 50% at 50% 50%,rgba(74,127,165,.05) 0%,transparent 70%)"></div>
+
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-20 reveal">
+      <div class="inline-flex items-center gap-3 mb-5">
+        <div class="divider w-8"></div>
+        <span class="text-xs font-medium tracking-[.2em] uppercase text-amber/68">Unsere Rassen</span>
+        <div class="divider w-8"></div>
+      </div>
+      <h2 id="rassen-heading" class="font-serif text-4xl md:text-5xl font-light text-cream/94">
+        Zwei edle <span class="gold-text font-semibold italic">Rassen</span>
+      </h2>
+    </div>
+
+    <!-- ── SIAM OLD STYLE ── -->
+    <article class="mb-28 reveal" aria-labelledby="siam-heading">
+      <div class="grid md:grid-cols-2 gap-14 items-start">
+
+        <!-- Fotos -->
+        <div class="space-y-4" aria-label="Fotos Siam Old Style">
+          <div class="breed-photo-wrap"><img draggable="false" src="Bilder/Mama_Sealpoint.jpeg"     class="breed-photo" alt="Siam Old Style Katze, Sealpoint Färbung" loading="lazy" /></div>
+          <div class="grid grid-cols-2 gap-4 breed-grid-inner">
+            <div class="breed-photo-wrap"><img draggable="false" src="Bilder/Lilacpoint_2.jpeg"         class="breed-photo" alt="Siam Old Style Lilacpoint"   loading="lazy" /></div>
+            <div class="breed-photo-wrap"><img draggable="false" src="Bilder/Cinnemtnpoint_Mama.jpeg"   class="breed-photo" alt="Siam Old Style Cinnamonpoint" loading="lazy" /></div>
+          </div>
+        </div>
+
+        <!-- Text -->
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-8 h-px" style="background:linear-gradient(90deg,#C8922A,transparent)"></div>
+            <span class="text-xs font-medium tracking-[.2em] uppercase text-amber/68">Rasse I</span>
+          </div>
+          <h3 id="siam-heading" class="font-serif text-4xl font-semibold text-cream/94 mb-1">Siam Old Style</h3>
+          <p class="font-serif text-base italic text-amber/52 mb-7">Die Tempelkatze aus dem Orient</p>
+
+          <div class="space-y-4 font-sans text-sm text-cream/55 leading-relaxed">
+            <p>Der <strong class="text-cream/84 font-medium">Siam Old Style</strong>,auch Traditional Siamese oder Apple Head Siamese,ist die ursprüngliche, historische Form der Siamkatze. Bereits im 14. Jahrhundert im Thai-Manuskript <em>Tamra Maew</em> (Katzenbuch) beschrieben, gilt sie als eine der ältesten Katzenrassen der Welt.</p>
+            <p>Im Gegensatz zur modernen Extrem-Siam besitzt der Old Style einen <strong class="text-cream/80 font-medium">natürlichen, harmonischen Körperbau</strong> mit rundem Kopf, kräftiger Statur und gerader Nase. Das kurze, feine Fell zeigt das typische Colorpoint-Muster: helles Grundfell mit dunklen Points an Ohren, Gesicht, Pfoten und Schwanz,in Farben wie Sealpoint, Bluepoint, Lilacpoint, Chocolatepoint oder Cinnamonpoint.</p>
+            <p>Das unverwechselbarste Merkmal sind die <strong class="text-amber/80 font-medium">tiefblauen Mandelaugen</strong>. Charakterlich ist der Siam Old Style ausgesprochen kommunikativ, intelligent und anhänglich,er entwickelt enge Bindungen und möchte aktiv am Familienleben teilhaben.</p>
+          </div>
+
+          <ul class="mt-7 space-y-2.5" role="list" aria-label="Merkmale Siam Old Style">
+            <li class="flex items-center gap-3"><div class="dot" aria-hidden="true"></div><span class="font-sans text-sm text-cream/62">Herkunft: Thailand (Königreich Siam)</span></li>
+            <li class="flex items-center gap-3"><div class="dot" aria-hidden="true"></div><span class="font-sans text-sm text-cream/62">Fell: Kurz, fein, Colorpoint in vielen Farben</span></li>
+            <li class="flex items-center gap-3"><div class="dot" aria-hidden="true"></div><span class="font-sans text-sm text-cream/62">Augen: Tiefblau, mandelförmig</span></li>
+            <li class="flex items-center gap-3"><div class="dot" aria-hidden="true"></div><span class="font-sans text-sm text-cream/62">Charakter: Kommunikativ, verspielt, sehr anhänglich</span></li>
+            <li class="flex items-center gap-3"><div class="dot" aria-hidden="true"></div><span class="font-sans text-sm text-cream/62">Lebenserwartung: 12–18 Jahre</span></li>
+          </ul>
+        </div>
+      </div>
+    </article>
+
+    <div class="divider mb-28 reveal" aria-hidden="true"></div>
+
+    <!-- ── RUSSISCH BLAU ── -->
+    <article class="reveal" aria-labelledby="russblau-heading">
+      <div class="grid md:grid-cols-2 gap-14 items-start">
+
+        <!-- Text links -->
+        <div class="order-2 md:order-1">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-8 h-px" style="background:linear-gradient(90deg,#4A7FA5,transparent)"></div>
+            <span class="text-xs font-medium tracking-[.2em] uppercase" style="color:rgba(74,127,165,.88)">Rasse II</span>
+          </div>
+          <h3 id="russblau-heading" class="font-serif text-4xl font-semibold text-cream/94 mb-1">Russisch Blau</h3>
+          <p class="font-serif text-base italic mb-7" style="color:rgba(74,127,165,.6)">Die Zarenprinzessin aus dem Norden</p>
+
+          <div class="space-y-4 font-sans text-sm text-cream/55 leading-relaxed">
+            <p>Der <strong class="text-cream/84 font-medium">Russisch Blau</strong>,auf Englisch Russian Blue, in seiner Heimat Archangel Blue genannt,zählt zu den elegantesten Katzenrassen der Welt. Die Rasse stammt aus der russischen Hafenstadt <strong class="text-cream/80 font-medium">Archangelsk</strong> am Weißen Meer, von wo britische Seeleute im 19. Jahrhundert die ersten Tiere nach Europa brachten.</p>
+            <p>Das charakteristischste Merkmal ist das <strong class="text-cream/80 font-medium">dichte, samtige Doppelcoat</strong> in gleichmäßigem Blaugrau mit silberfarbener Spitzenfärbung (Tipping),ein nahezu plüschartiges Fell, das im Licht schimmert. Als Kitten haben Russisch Blau Katzen gelbe Augen, die sich bis zum zweiten Lebensjahr zu leuchtendem <strong class="text-steel font-medium">Smaragdgrün</strong> entwickeln.</p>
+            <p>Im Wesen ist der Russisch Blau ruhig, beobachtend und <strong class="text-cream/80 font-medium">tief loyal</strong>. Fremden gegenüber anfangs zurückhaltend, entwickelt er zur vertrauten Bezugsperson eine ausgesprochen innige Bindung. Er produziert weniger des Allergens Fel d1 als andere Rassen.</p>
+          </div>
+
+          <ul class="mt-7 space-y-2.5" role="list" aria-label="Merkmale Russisch Blau">
+            <li class="flex items-center gap-3"><div class="dot dot-blue" aria-hidden="true"></div><span class="font-sans text-sm text-cream/62">Herkunft: Archangelsk, Russland</span></li>
+            <li class="flex items-center gap-3"><div class="dot dot-blue" aria-hidden="true"></div><span class="font-sans text-sm text-cream/62">Fell: Kurzes Doppelcoat, blaugrau mit Silbertipping</span></li>
+            <li class="flex items-center gap-3"><div class="dot dot-blue" aria-hidden="true"></div><span class="font-sans text-sm text-cream/62">Augen: Smaragdgrün, mandelförmig</span></li>
+            <li class="flex items-center gap-3"><div class="dot dot-blue" aria-hidden="true"></div><span class="font-sans text-sm text-cream/62">Charakter: Ruhig, loyal, sanft, intelligent</span></li>
+            <li class="flex items-center gap-3"><div class="dot dot-blue" aria-hidden="true"></div><span class="font-sans text-sm text-cream/62">Besonderheit: Weniger Fel d1,oft verträglicher für Allergiker</span></li>
+            <li class="flex items-center gap-3"><div class="dot dot-blue" aria-hidden="true"></div><span class="font-sans text-sm text-cream/62">Lebenserwartung: 15–20 Jahre</span></li>
+          </ul>
+        </div>
+
+        <!-- Fotos rechts -->
+        <div class="space-y-4 order-1 md:order-2" aria-label="Fotos Russisch Blau">
+          <div class="breed-photo-wrap"><img draggable="false" src="Bilder/Mama_russischblau_1.jpeg" class="breed-photo" alt="Russisch Blau Katze"        loading="lazy" /></div>
+          <div class="grid grid-cols-2 gap-4 breed-grid-inner">
+            <div class="breed-photo-wrap"><img draggable="false" src="Bilder/Russischblau_2.jpeg"   class="breed-photo" alt="Russisch Blau Portrait"    loading="lazy" /></div>
+            <div class="breed-photo-wrap"><img draggable="false" src="Bilder/rusischblau_1.jpeg"     class="breed-photo" alt="Russisch Blau Katze sitzend" loading="lazy" /></div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     GALERIE
+═══════════════════════════════════════ -->
+<section id="galerie" class="py-28 px-6 relative" aria-labelledby="galerie-heading">
+  <div class="absolute inset-0 pointer-events-none" aria-hidden="true"
+       style="background:radial-gradient(ellipse 65% 40% at 50% 100%,rgba(200,146,42,.06) 0%,transparent 70%)"></div>
+
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-16 reveal">
+      <div class="inline-flex items-center gap-3 mb-5">
+        <div class="divider w-8"></div>
+        <span class="text-xs font-medium tracking-[.2em] uppercase text-amber/68">Galerie</span>
+        <div class="divider w-8"></div>
+      </div>
+      <h2 id="galerie-heading" class="font-serif text-4xl md:text-5xl font-light text-cream/94">
+        Unsere <span class="gold-text font-semibold italic">Katzen</span>
+      </h2>
+      <p class="font-sans text-sm text-cream/45 mt-4">Auf ein Bild klicken zum Vergrößern</p>
+    </div>
+
+    <!-- Masonry,natürliche Bildgröße, kein Beschneiden -->
+    <div class="columns-2 md:columns-3 lg:columns-4 gap-3 reveal" role="list" aria-label="Bildergalerie">
+
+      <div class="gallery-wrap" role="listitem"><img draggable="false" src="Bilder/Lilacpoint_3.jpeg"          alt="Siam Old Style Lilacpoint"          loading="lazy" /></div>
+      <div class="gallery-wrap" role="listitem"><img draggable="false" src="Bilder/Russischblau_Bluepoint_1.jpeg" alt="Russisch Blau"                    loading="lazy" /></div>
+      <div class="gallery-wrap" role="listitem"><img draggable="false" src="Bilder/Sealpoint_2.jpeg"            alt="Siam Sealpoint"                    loading="lazy" /></div>
+      <div class="gallery-wrap" role="listitem"><img draggable="false" src="Bilder/Lilacpoint_4.jpeg"          alt="Siam Old Style Lilacpoint"          loading="lazy" /></div>
+      <div class="gallery-wrap" role="listitem"><img draggable="false" src="Bilder/Russischblau_Bluepoint_2.jpeg" alt="Russisch Blau"                   loading="lazy" /></div>
+      <div class="gallery-wrap" role="listitem"><img draggable="false" src="Bilder/Sealpoint_Bluepoint_1.jpeg" alt="Sialm Sealpoint und Bluepoint"      loading="lazy" /></div>
+      <div class="gallery-wrap" role="listitem"><img draggable="false" src="Bilder/Lilac-Sealpoint_1.jpeg"     alt="Siam Lilac Sealpoint"              loading="lazy" /></div>
+      <div class="gallery-wrap" role="listitem"><img draggable="false" src="Bilder/Sealpoint_Bluepoint_2.jpeg" alt="Siam Sealpoint und Bluepoint"       loading="lazy" /></div>
+      <div class="gallery-wrap" role="listitem"><img draggable="false" src="Bilder/Lilac-Sealpoint_2.jpeg"     alt="Siam Lilac Sealpoint"              loading="lazy" /></div>
+      <div class="gallery-wrap" role="listitem"><img draggable="false" src="Bilder/Sealpoint_Bluepoint_3.jpeg" alt="Siam Sealpoint und Bluepoint"       loading="lazy" /></div>
+      <div class="gallery-wrap" role="listitem"><img draggable="false" src="Bilder/Mama_Lilac-Sealpoint_3.jpeg" alt="Siam Old Style"                   loading="lazy" /></div>
+      <div class="gallery-wrap" role="listitem"><img draggable="false" src="Bilder/Sealpoint_lilacpoint_.jpeg" alt="Siam Sealpoint und Lilacpoint"      loading="lazy" /></div>
+      <div class="gallery-wrap" role="listitem"><img draggable="false" src="Bilder/lilacpoint_1.jpeg"          alt="Siam Lilacpoint"                   loading="lazy" /></div>
+      <div class="gallery-wrap" role="listitem"><img draggable="false" src="Bilder/Sealpoint_lilacpoint_2.jpeg" alt="Siam Sealpoint Lilacpoint"         loading="lazy" /></div>
+      <div class="gallery-wrap" role="listitem"><img draggable="false" src="Bilder/SealpointKitten_1.jpeg"     alt="Junges Siam Kätzchen"              loading="lazy" /></div>
+      <div class="gallery-wrap" role="listitem"><img draggable="false" src="Bilder/lilac_cinemon_1.jpeg"       alt="Siam Lilac Cinnamon"               loading="lazy" /></div>
+      <div class="gallery-wrap" role="listitem"><img draggable="false" src="Bilder/Sealpointkitten_2.jpeg"     alt="Junges Siam Kätzchen"              loading="lazy" /></div>
+      <div class="gallery-wrap" role="listitem"><img draggable="false" src="Bilder/Lilac-Sealpoint_4.jpeg"     alt="Siam Lilac Sealpoint"              loading="lazy" /></div>
+
+    </div>
+
+    <p class="text-center mt-10 font-sans text-sm text-cream/38 reveal">
+      Mehr aktuelle Fotos auf
+      <a href="https://www.instagram.com/orangenightcats/" target="_blank" rel="noopener noreferrer"
+         class="text-amber/65 hover:text-amber transition-colors focus:outline-none focus:underline">@orangenightcats</a>
+      und
+      <a href="https://www.tiktok.com/@orange.night.cats" target="_blank" rel="noopener noreferrer"
+         class="text-cream/55 hover:text-cream transition-colors focus:outline-none focus:underline">@orange.night.cats</a>
+    </p>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     KONTAKT
+═══════════════════════════════════════ -->
+<section id="kontakt" class="py-28 px-6" aria-labelledby="kontakt-heading">
+  <div class="max-w-3xl mx-auto text-center">
+
+    <div class="mb-14 reveal">
+      <div class="inline-flex items-center gap-3 mb-5">
+        <div class="divider w-8"></div>
+        <span class="text-xs font-medium tracking-[.2em] uppercase text-amber/68">Kontakt</span>
+        <div class="divider w-8"></div>
+      </div>
+      <h2 id="kontakt-heading" class="font-serif text-4xl md:text-5xl font-light text-cream/94 mb-5">
+        Lass uns <span class="gold-text font-semibold italic">reden</span>
+      </h2>
+      <p class="font-sans text-base text-cream/52 max-w-lg mx-auto leading-relaxed">
+        Du liebst Siamkatzen oder Russisch Blau genauso wie wir? Dann schreib uns einfach auf Instagram,wir freuen uns über jeden Austausch.
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-3 gap-4 max-w-2xl mx-auto reveal">
+      <!-- Instagram -->
+      <a href="https://www.instagram.com/orangenightcats" target="_blank" rel="noopener noreferrer"
+         class="flex items-center gap-4 glass rounded-2xl p-5 group transition-all duration-300 hover:border-gold/30 focus:outline-none focus:ring-2 focus:ring-gold/30"
+         aria-label="OrangeNightCats auf Instagram">
+        <div class="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0"
+             style="background:rgba(200,146,42,.12);border:1px solid rgba(200,146,42,.22)">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="#E8A83E" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </div>
+        <div class="text-left">
+          <div class="font-sans text-xs text-cream/35 tracking-widest uppercase mb-0.5">Instagram</div>
+          <div class="font-serif text-base font-semibold text-cream/90 group-hover:text-amber transition-colors">@orangenightcats</div>
+        </div>
+      </a>
+
+      <!-- TikTok -->
+      <a href="https://www.tiktok.com/@orange.night.cats" target="_blank" rel="noopener noreferrer"
+         class="flex items-center gap-4 glass rounded-2xl p-5 group transition-all duration-300 hover:border-cream/20 focus:outline-none focus:ring-2 focus:ring-cream/20"
+         aria-label="OrangeNightCats auf TikTok">
+        <div class="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0"
+             style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1)">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="rgba(249,244,236,.75)" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.76a4.85 4.85 0 01-1.01-.07z"/></svg>
+        </div>
+        <div class="text-left">
+          <div class="font-sans text-xs text-cream/35 tracking-widest uppercase mb-0.5">TikTok</div>
+          <div class="font-serif text-base font-semibold text-cream/90 group-hover:text-cream transition-colors">@orange.night.cats</div>
+        </div>
+      </a>
+
+      <!-- Standort -->
+      <div class="flex items-center gap-4 glass rounded-2xl p-5">
+        <div class="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0"
+             style="background:rgba(74,127,165,.12);border:1px solid rgba(74,127,165,.22)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="#93C5FD" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C8.134 2 5 5.134 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.866-3.134-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z" clip-rule="evenodd"/></svg>
+        </div>
+        <div class="text-left">
+          <div class="font-sans text-xs text-cream/35 tracking-widest uppercase mb-0.5">Standort</div>
+          <div class="font-serif text-base font-semibold text-cream/90">Leverkusen</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════ -->
+<footer class="py-10 px-6" style="border-top:1px solid rgba(255,255,255,.055)" role="contentinfo">
+  <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-5">
+
+    <div class="flex items-center gap-2.5">
+      <img draggable="false" src="Bilder/Logo.jpeg" alt="OrangeNight Cats Logo" class="w-8 h-8 rounded-lg object-cover" loading="lazy" />
+      <span class="font-serif text-sm font-semibold" style="color:#E8A83E">OrangeNight</span>
+      <span class="font-serif text-sm font-light text-cream/52">Cats</span>
+    </div>
+
+    <nav class="flex items-center flex-wrap justify-center gap-5" aria-label="Footer Navigation">
+      <a href="#ueber"   class="font-sans text-xs text-cream/32 hover:text-amber transition-colors tracking-widest uppercase">Über uns</a>
+      <a href="#rassen"  class="font-sans text-xs text-cream/32 hover:text-amber transition-colors tracking-widest uppercase">Rassen</a>
+      <a href="#galerie" class="font-sans text-xs text-cream/32 hover:text-amber transition-colors tracking-widest uppercase">Galerie</a>
+      <a href="#kontakt" class="font-sans text-xs text-cream/32 hover:text-amber transition-colors tracking-widest uppercase">Kontakt</a>
+    </nav>
+
+    <p class="font-sans text-xs text-cream/22 text-center">
+      &copy; 2025 OrangeNight Cats<br/>
+      <span style="color:rgba(249,244,236,.14)">Private, nicht-kommerzielle Liebhaberseite</span>
+    </p>
+  </div>
+</footer>
+
+
+<!-- ═══════════════════════════════════════
+     LIGHTBOX
+═══════════════════════════════════════ -->
+<div id="lightbox" role="dialog" aria-modal="true" aria-label="Bild vergrößert">
+  <button id="lbClose" class="absolute top-4 right-4 w-10 h-10 rounded-full glass flex items-center justify-center text-cream/65 hover:text-cream transition-colors focus:outline-none focus:ring-2 focus:ring-cream/30 cursor-pointer" aria-label="Schließen">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg>
+  </button>
+  <img id="lbImg" src="" alt="" />
+</div>
+
+
+<!-- ═══════════════════════════════════════
+     JS
+═══════════════════════════════════════ -->
+<script>
+  // Stars
+  (function(){
+    const sf = document.getElementById('starField');
+    for(let i=0;i<55;i++){
+      const s=document.createElement('div');
+      const sz=Math.random()*1.7+.4;
+      s.style.cssText=`position:absolute;border-radius:50%;width:${sz}px;height:${sz}px;top:${Math.random()*100}%;left:${Math.random()*100}%;background:rgba(255,255,255,${Math.random()*.45+.08});animation:twinkle ${Math.random()*4+3}s ease-in-out infinite;animation-delay:${Math.random()*6}s`;
+      sf.appendChild(s);
+    }
+  })();
+
+  // Reveal on scroll
+  const ro = new IntersectionObserver(es=>{
+    es.forEach(e=>{ if(e.isIntersecting){e.target.classList.add('visible');ro.unobserve(e.target);} });
+  },{threshold:.08,rootMargin:'0px 0px -30px 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
+
+  // Mobile menu
+  const btn=document.getElementById('menuBtn'), mm=document.getElementById('mobileMenu');
+  btn.addEventListener('click',()=>{
+    const open=!mm.classList.contains('hidden');
+    mm.classList.toggle('hidden',open);
+    btn.setAttribute('aria-expanded',String(!open));
+  });
+  mm.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{mm.classList.add('hidden');btn.setAttribute('aria-expanded','false');}));
+
+  // Bildschutz: Rechtsklick und Drag auf allen Bildern blockieren
+  document.addEventListener('contextmenu', e=>{ if(e.target.tagName==='IMG') e.preventDefault(); });
+  document.addEventListener('dragstart',   e=>{ if(e.target.tagName==='IMG') e.preventDefault(); });
+
+  // Lightbox – Klick auf .gallery-wrap (::after-Overlay fängt den Event)
+  const lb=document.getElementById('lightbox'), lbImg=document.getElementById('lbImg');
+  function openLb(src,alt){lbImg.src=src;lbImg.alt=alt;lb.classList.add('open');document.body.style.overflow='hidden';}
+  function closeLb(){lb.classList.remove('open');document.body.style.overflow='';setTimeout(()=>{lbImg.src='';},300);}
+  document.querySelectorAll('.gallery-wrap').forEach(wrap=>{
+    const img=wrap.querySelector('img');
+    wrap.addEventListener('click',()=>openLb(img.src,img.alt));
+    wrap.style.cursor='zoom-in';
+  });
+  document.getElementById('lbClose').addEventListener('click',closeLb);
+  lb.addEventListener('click',e=>{if(e.target===lb)closeLb();});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLb();});
+
+  // Nav highlight
+  const secs=document.querySelectorAll('section[id]'),nls=document.querySelectorAll('.nav-link');
+  new IntersectionObserver(es=>{
+    es.forEach(e=>{if(e.isIntersecting)nls.forEach(l=>{l.style.color=l.getAttribute('href')==='#'+e.target.id?'#E8A83E':''});});
+  },{threshold:.4}).observe&&secs.forEach(s=>new IntersectionObserver(es=>{
+    es.forEach(e=>{if(e.isIntersecting)nls.forEach(l=>{l.style.color=l.getAttribute('href')==='#'+e.target.id?'#E8A83E':''});});
+  },{threshold:.4}).observe(s));
+</script>
+
+<style>
+  input::placeholder,textarea::placeholder{color:rgba(249,244,236,.22);}
+  select option{background:#0F1E3D;color:#F9F4EC;}
+
+  /* ── Bildschutz ─────────────────────────── */
+  img {
+    -webkit-user-drag: none;
+    user-select: none;
+    -webkit-user-select: none;
+    pointer-events: none;   /* blockiert Rechtsklick & Drag */
+  }
+  /* Galerie & Lightbox brauchen pointer-events für den Klick –
+     deshalb nur auf den Container, nicht das img direkt */
+  .gallery-wrap, .hero-frame, .breed-photo-wrap {
+    pointer-events: auto;
+    position: relative;
+  }
+  /* Transparentes Overlay über jedem Galeríebild */
+  .gallery-wrap::after, .hero-frame::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    background: transparent;
+    cursor: zoom-in;
+  }
+  .gallery-wrap img, .hero-frame img { pointer-events: none; }
+
+  /* ── Mobile-Optimierungen ───────────────── */
+  @media (max-width: 767px) {
+    /* Hero-Collage: kleines Akzentfoto ausblenden */
+    .hero-frame:nth-child(3) { display: none !important; }
+    /* Hero-Fotos schmaler auf kleinen Screens */
+    .hero-frame:nth-child(1) { width: 160px !important; height: 210px !important; right: 8px !important; }
+    .hero-frame:nth-child(2) { width: 170px !important; height: 225px !important; left: 4px !important; }
+
+    /* Rassefotos: 1 Spalte auf Mobile */
+    .breed-grid-inner { grid-template-columns: 1fr 1fr !important; }
+
+    /* Galerie: 2 Spalten auf Mobile bereits gesetzt */
+
+    /* Größere Touch-Targets in der Nav */
+    .nav-link { padding: 0.5rem 0; min-height: 44px; display: flex; align-items: center; }
+
+    /* Kontakt-Karten untereinander */
+    #kontakt .grid { grid-template-columns: 1fr !important; }
+
+    /* Über-uns Karten untereinander */
+    #ueber .grid { grid-template-columns: 1fr !important; }
+
+    /* Section padding reduzieren */
+    section { padding-top: 4rem !important; padding-bottom: 4rem !important; }
+  }
+  @media (max-width: 400px) {
+    .hero-frame:nth-child(1), .hero-frame:nth-child(2) { display: none !important; }
+  }
+</style>
+</body>
+</html>
