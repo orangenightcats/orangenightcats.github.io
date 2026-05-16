@@ -127,7 +127,7 @@
       transition:transform .35s ease, box-shadow .35s ease;
     }
     .hero-frame:hover { transform:translateY(-4px); box-shadow:0 24px 68px rgba(0,0,0,.5); }
-    .hero-frame img { width:100%; height:auto; display:block; }
+    .hero-frame img { width:100%; height:100%; object-fit:cover; display:block; }
     .hero-link { display:block; color:inherit; text-decoration:none; }
     .hero-link:focus-visible { outline:2px solid rgba(232,168,62,.9); outline-offset:4px; }
 
@@ -343,19 +343,19 @@
     <!-- Photo collage -->
     <div class="relative h-[420px] md:h-[480px] reveal hero-collage" style="animation-delay:.1s" aria-label="Fotos unserer Katzen">
       <a href="#russblau-photos" class="hero-link" aria-label="Zu Russisch Blau Fotos scrollen">
-        <div class="hero-frame animate-float absolute" style="width:175px;right:16px;top:12px;z-index:3;border:1px solid rgba(74,127,165,.28);animation-delay:0s">
+        <div class="hero-frame animate-float absolute" style="width:175px;aspect-ratio:1792/2400;right:16px;top:12px;z-index:3;border:1px solid rgba(74,127,165,.28);animation-delay:0s">
           <img draggable="false" src="Bilder/Mama_russischblau_1.jpeg" alt="Russisch Blau Katze" loading="eager" />
           <div class="absolute bottom-3 left-3 text-xs font-sans font-medium tracking-widest uppercase" style="color:rgba(147,197,253,.9);text-shadow:0 1px 4px rgba(0,0,0,.8)">Russisch Blau</div>
         </div>
       </a>
       <a href="#siam-photos" class="hero-link" aria-label="Zu Siam Old Style Fotos scrollen">
-        <div class="hero-frame animate-float absolute" style="width:200px;left:10px;bottom:0;z-index:2;border:1px solid rgba(200,146,42,.22);animation-delay:1.4s">
+        <div class="hero-frame animate-float absolute" style="width:200px;aspect-ratio:2400/1792;left:10px;bottom:0;z-index:2;border:1px solid rgba(200,146,42,.22);animation-delay:1.4s">
           <img draggable="false" src="Bilder/Navigation_Siam.jpeg" alt="Siam Old Style Katze" loading="eager" />
           <div class="absolute bottom-3 left-3 text-xs font-sans font-medium tracking-widest uppercase" style="color:rgba(232,168,62,.9);text-shadow:0 1px 4px rgba(0,0,0,.8)">Siam Old Style</div>
         </div>
       </a>
       <a href="#galerie" class="hero-link" aria-label="Zur Galerie scrollen">
-        <div class="hero-frame animate-float absolute" style="width:120px;left:55px;top:16px;z-index:4;border:1px solid rgba(255,255,255,.1);animation-delay:2.8s">
+        <div class="hero-frame animate-float absolute" style="width:130px;aspect-ratio:2400/1792;left:50px;top:12px;z-index:4;border:1px solid rgba(255,255,255,.1);animation-delay:2.8s">
           <img draggable="false" src="Bilder/navigation_galerie.jpeg" alt="Galerie" loading="lazy" />
           <div class="absolute bottom-3 left-3 text-xs font-sans font-medium tracking-widest uppercase" style="color:rgba(249,244,236,.85);text-shadow:0 1px 4px rgba(0,0,0,.8)">Galerie</div>
         </div>
@@ -765,17 +765,39 @@
 
   /* ── Mobile-Optimierungen ───────────────── */
   @media (max-width: 767px) {
-    /* Hero-Collage: mobile stacking to avoid clipping and label overlap */
+    /* Hero-Collage: 2-Spalten-Grid mit Galerie darunter zentriert */
     .hero-collage {
       height: auto !important;
       min-height: 0 !important;
       display: grid !important;
-      grid-template-columns: 1fr !important;
-      justify-items: center !important;
-      gap: 1rem !important;
-      padding: 1rem 0 2rem !important;
+      grid-template-columns: 1fr 1fr !important;
+      grid-template-rows: auto auto !important;
+      gap: 0.75rem !important;
+      padding: 0.5rem 0 2rem !important;
       width: 100% !important;
       max-width: 100% !important;
+      align-items: start !important;
+    }
+    /* Russisch Blau – erste Spalte, erste Zeile */
+    .hero-collage .hero-link:nth-child(1) {
+      grid-column: 1 !important;
+      grid-row: 1 !important;
+    }
+    /* Siam – zweite Spalte, erste Zeile */
+    .hero-collage .hero-link:nth-child(2) {
+      grid-column: 2 !important;
+      grid-row: 1 !important;
+    }
+    /* Galerie – beide Spalten, zweite Zeile, zentriert */
+    .hero-collage .hero-link:nth-child(3) {
+      grid-column: 1 / -1 !important;
+      grid-row: 2 !important;
+      display: flex !important;
+      justify-content: center !important;
+    }
+    /* Hintergrund-Glows ausblenden */
+    .hero-collage > div[aria-hidden] {
+      display: none !important;
     }
     .hero-collage .hero-link {
       position: static !important;
@@ -785,39 +807,28 @@
     }
     .hero-collage .hero-frame {
       position: relative !important;
-      width: min(86vw, 280px) !important;
+      width: 100% !important;
+      aspect-ratio: unset !important;
       height: auto !important;
-      margin: 0 auto !important;
+      margin: 0 !important;
       transform: none !important;
       animation: none !important;
+      top: auto !important; right: auto !important;
+      left: auto !important; bottom: auto !important;
     }
-    .hero-collage .hero-frame:nth-child(1),
-    .hero-collage .hero-frame:nth-child(2),
-    .hero-collage .hero-frame:nth-child(3) {
-      top: auto !important;
-      right: auto !important;
-      left: auto !important;
-      bottom: auto !important;
+    /* Galerie-Frame auf Mobile etwas schmaler */
+    .hero-collage .hero-link:nth-child(3) .hero-frame {
+      width: min(55vw, 200px) !important;
     }
     .hero-collage .hero-frame img {
       width: 100% !important;
-      height: auto !important;
+      height: 100% !important;
+      object-fit: cover !important;
     }
     #hero {
       min-height: auto !important;
-      padding-bottom: 6rem !important;
+      padding-bottom: 4rem !important;
     }
-
-    /* Rassefotos optimieren */
-    .breed-photos-circular {
-      max-width: 340px !important;
-    }
-    .breed-photos-circular .breed-photo-wrap:nth-child(2),
-    .breed-photos-circular .breed-photo-wrap:nth-child(3) {
-      width: 35%;
-    }
-
-    /* Galerie: 2 Spalten auf Mobile bereits gesetzt */
 
     /* Größere Touch-Targets in der Nav */
     .nav-link { padding: 0.5rem 0; min-height: 44px; display: flex; align-items: center; }
@@ -832,7 +843,12 @@
     section { padding-top: 4rem !important; padding-bottom: 4rem !important; }
   }
   @media (max-width: 400px) {
-    .hero-frame:nth-child(3) { display: none !important; }
+    /* Auf sehr kleinen Screens Galerie-Karte ausblenden */
+    .hero-collage .hero-link:nth-child(3) { display: none !important; }
+    .hero-collage .hero-link:nth-child(1),
+    .hero-collage .hero-link:nth-child(2) {
+      grid-column: auto !important;
+    }
   }
 </style>
 </body>
