@@ -15,34 +15,70 @@
   </script>
 
   <!-- SEO -->
-  <title>OrangeNight Cats – Siam Old Style & Russisch Blau | Private Liebhaberseite</title>
-  <meta name="description" content="OrangeNight Cats – Private Liebhaberseite für Siam Old Style und Russisch Blau Katzen. Rasseportraits, Fotos und Wissenswertes zu zwei der elegantesten Katzenrassen." />
-  <meta name="keywords" content="Siam Old Style, Traditional Siamese, Russisch Blau, Russian Blue, Katzenliebhaber, Siamkatze, Rassekatze Deutschland" />
+  <title>OrangeNight Cats – Siam Old Style & Russisch Blau | Katzenliebhaber Leverkusen</title>
+  <meta name="description" content="OrangeNight Cats – Liebhaberseite für Siam Old Style (Traditional Siamese) und Russisch Blau aus Leverkusen. Rasseportraits, Charaktere, Fotos und alles über diese zwei eleganten Katzenrassen." />
+  <meta name="keywords" content="Siam Old Style, Traditional Siamese, Apple Head Siamese, Russisch Blau, Russian Blue, Archangel Blue, Katzenliebhaber, Siamkatze, Rassekatze, Leverkusen, Colorpoint, Sealpoint, Lilacpoint, Bluepoint" />
   <meta name="robots" content="index, follow" />
   <meta name="author" content="OrangeNight Cats" />
+  <link rel="canonical" href="https://orangenightcats.de/" />
 
   <!-- Open Graph -->
-  <meta property="og:type"        content="website" />
-  <meta property="og:title"       content="OrangeNight Cats – Siam Old Style & Russisch Blau" />
-  <meta property="og:description" content="Private Liebhaberseite für zwei der elegantesten Katzenrassen der Welt." />
-  <meta property="og:image"       content="Bilder/Logo_social.jpeg" />
-  <meta property="og:locale"      content="de_DE" />
+  <meta property="og:type"         content="website" />
+  <meta property="og:url"          content="https://orangenightcats.de/" />
+  <meta property="og:site_name"    content="OrangeNight Cats" />
+  <meta property="og:title"        content="OrangeNight Cats – Siam Old Style & Russisch Blau" />
+  <meta property="og:description"  content="Private Liebhaberseite für Siam Old Style und Russisch Blau Katzen aus Leverkusen – Rasseportraits, Fotos und Wissenswertes." />
+  <meta property="og:image"        content="https://orangenightcats.de/Bilder/Logo_social.jpeg" />
+  <meta property="og:image:width"  content="768" />
+  <meta property="og:image:height" content="1376" />
+  <meta property="og:locale"       content="de_DE" />
 
-  <!-- Schema.org – Person/privat, kein Unternehmen -->
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="OrangeNight Cats – Siam Old Style & Russisch Blau" />
+  <meta name="twitter:description" content="Private Liebhaberseite für Siam Old Style und Russisch Blau Katzen aus Leverkusen." />
+  <meta name="twitter:image"       content="https://orangenightcats.de/Bilder/Logo_social.jpeg" />
+
+  <!-- Schema.org -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "OrangeNight Cats",
-    "description": "Private, nicht-kommerzielle Liebhaberseite für Siam Old Style und Russisch Blau Katzen",
-    "url": "https://orangenightcats.de",
-    "sameAs": ["https://www.instagram.com/orangenightcats"]
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://orangenightcats.de/#website",
+        "name": "OrangeNight Cats",
+        "description": "Private, nicht-kommerzielle Liebhaberseite für Siam Old Style und Russisch Blau Katzen",
+        "url": "https://orangenightcats.de",
+        "inLanguage": "de-DE",
+        "sameAs": [
+          "https://www.instagram.com/orangenightcats",
+          "https://www.tiktok.com/@orangenightcats"
+        ]
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://orangenightcats.de/",
+        "url": "https://orangenightcats.de/",
+        "name": "OrangeNight Cats – Siam Old Style & Russisch Blau | Katzenliebhaber Leverkusen",
+        "description": "Liebhaberseite für Siam Old Style und Russisch Blau aus Leverkusen. Rasseportraits, Charaktere, Fotos.",
+        "inLanguage": "de-DE",
+        "isPartOf": { "@id": "https://orangenightcats.de/#website" },
+        "about": [
+          { "@type": "Thing", "name": "Siam Old Style", "alternateName": "Traditional Siamese" },
+          { "@type": "Thing", "name": "Russisch Blau",  "alternateName": "Russian Blue" }
+        ]
+      }
+    ]
   }
   </script>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- Preload kritische Hero-Bilder (LCP) -->
+  <link rel="preload" href="Bilder/Mama_russischblau_1.jpeg" as="image" />
+  <link rel="preload" href="Bilder/Navigation_Siam.jpeg"     as="image" />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
 
@@ -251,7 +287,7 @@
 <nav class="fixed top-4 left-4 right-4 z-50 glass rounded-2xl px-5 py-3 flex items-center justify-between" role="navigation" aria-label="Hauptnavigation">
 
   <a href="#hero" class="flex items-center gap-2.5 focus:outline-none focus:ring-2 focus:ring-gold/40 rounded-lg" aria-label="OrangeNight Cats Startseite">
-    <img draggable="false" src="Bilder/Logo.jpeg" alt="OrangeNight Cats Logo" class="w-9 h-9 rounded-lg object-cover" loading="eager" />
+    <img draggable="false" src="Bilder/Logo.jpeg" alt="OrangeNight Cats Logo" class="w-9 h-9 rounded-lg object-cover" loading="eager" width="768" height="1376" />
     <span class="font-serif text-sm font-semibold" style="color:#E8A83E">OrangeNight</span>
     <span class="font-serif text-sm font-light text-cream/65">Cats</span>
   </a>
@@ -344,19 +380,19 @@
     <div class="relative h-[420px] md:h-[480px] reveal hero-collage" style="animation-delay:.1s" aria-label="Fotos unserer Katzen">
       <a href="#russblau-photos" class="hero-link" aria-label="Zu Russisch Blau Fotos scrollen">
         <div class="hero-frame animate-float absolute" style="width:175px;aspect-ratio:1792/2400;right:16px;top:12px;z-index:3;border:1px solid rgba(74,127,165,.28);animation-delay:0s">
-          <img draggable="false" src="Bilder/Mama_russischblau_1.jpeg" alt="Russisch Blau Katze" loading="eager" />
+          <img draggable="false" src="Bilder/Mama_russischblau_1.jpeg" alt="Russisch Blau Katze" loading="eager" fetchpriority="high" width="1792" height="2400" />
           <div class="absolute bottom-3 left-3 text-xs font-sans font-medium tracking-widest uppercase" style="color:rgba(147,197,253,.9);text-shadow:0 1px 4px rgba(0,0,0,.8)">Russisch Blau</div>
         </div>
       </a>
       <a href="#siam-photos" class="hero-link" aria-label="Zu Siam Old Style Fotos scrollen">
         <div class="hero-frame animate-float absolute" style="width:200px;aspect-ratio:2400/1792;left:10px;bottom:0;z-index:2;border:1px solid rgba(200,146,42,.22);animation-delay:1.4s">
-          <img draggable="false" src="Bilder/Navigation_Siam.jpeg" alt="Siam Old Style Katze" loading="eager" />
+          <img draggable="false" src="Bilder/Navigation_Siam.jpeg" alt="Siam Old Style Katze" loading="eager" fetchpriority="high" width="2400" height="1792" />
           <div class="absolute bottom-3 left-3 text-xs font-sans font-medium tracking-widest uppercase" style="color:rgba(232,168,62,.9);text-shadow:0 1px 4px rgba(0,0,0,.8)">Siam Old Style</div>
         </div>
       </a>
       <a href="#galerie" class="hero-link" aria-label="Zur Galerie scrollen">
         <div class="hero-frame animate-float absolute" style="width:130px;aspect-ratio:2400/1792;left:50px;top:12px;z-index:4;border:1px solid rgba(255,255,255,.1);animation-delay:2.8s">
-          <img draggable="false" src="Bilder/navigation_galerie.jpeg" alt="Galerie" loading="lazy" />
+          <img draggable="false" src="Bilder/navigation_galerie.jpeg" alt="Galerie – Fotos unserer Katzen" loading="lazy" width="2400" height="1792" />
           <div class="absolute bottom-3 left-3 text-xs font-sans font-medium tracking-widest uppercase" style="color:rgba(249,244,236,.85);text-shadow:0 1px 4px rgba(0,0,0,.8)">Galerie</div>
         </div>
       </a>
@@ -444,9 +480,9 @@
 
         <!-- Fotos -->
         <div id="siam-photos" class="breed-photos-layout" aria-label="Fotos Siam Old Style">
-          <div class="breed-photo-wrap"><img draggable="false" src="Bilder/Mama_Sealpoint.jpeg"     class="breed-photo" alt="Siam Old Style Katze, Sealpoint Färbung" loading="lazy" /></div>
-          <div class="breed-photo-wrap"><img draggable="false" src="Bilder/Lilacpoint_2.jpeg"         class="breed-photo" alt="Siam Old Style Lilacpoint"   loading="lazy" /></div>
-          <div class="breed-photo-wrap"><img draggable="false" src="Bilder/Cinnemtnpoint_Mama.jpeg"   class="breed-photo" alt="Siam Old Style Cinnamonpoint" loading="lazy" /></div>
+          <div class="breed-photo-wrap"><img draggable="false" src="Bilder/Mama_Sealpoint.jpeg"     class="breed-photo" alt="Siam Old Style Katze, Sealpoint Färbung" loading="lazy" width="896"  height="1200" /></div>
+          <div class="breed-photo-wrap"><img draggable="false" src="Bilder/Lilacpoint_2.jpeg"         class="breed-photo" alt="Siam Old Style Lilacpoint"   loading="lazy" width="768"  height="1376" /></div>
+          <div class="breed-photo-wrap"><img draggable="false" src="Bilder/Cinnemtnpoint_Mama.jpeg"   class="breed-photo" alt="Siam Old Style Cinnamonpoint" loading="lazy" width="896"  height="1200" /></div>
         </div>
 
         <!-- Text -->
@@ -508,9 +544,9 @@
 
         <!-- Fotos rechts -->
         <div id="russblau-photos" class="breed-photos-layout order-1 md:order-2" aria-label="Fotos Russisch Blau">
-          <div class="breed-photo-wrap"><img draggable="false" src="Bilder/Mama_russischblau_1.jpeg" class="breed-photo" alt="Russisch Blau Katze"        loading="lazy" /></div>
-          <div class="breed-photo-wrap"><img draggable="false" src="Bilder/Russischblau_2.jpeg"   class="breed-photo" alt="Russisch Blau Portrait"    loading="lazy" /></div>
-          <div class="breed-photo-wrap"><img draggable="false" src="Bilder/rusischblau_1.jpeg"     class="breed-photo" alt="Russisch Blau Katze sitzend" loading="lazy" /></div>
+          <div class="breed-photo-wrap"><img draggable="false" src="Bilder/Mama_russischblau_1.jpeg" class="breed-photo" alt="Russisch Blau Katze"        loading="lazy" width="1792" height="2400" /></div>
+          <div class="breed-photo-wrap"><img draggable="false" src="Bilder/Russischblau_2.jpeg"   class="breed-photo" alt="Russisch Blau Portrait"    loading="lazy" width="1536" height="2752" /></div>
+          <div class="breed-photo-wrap"><img draggable="false" src="Bilder/rusischblau_1.jpeg"     class="breed-photo" alt="Russisch Blau Katze sitzend" loading="lazy" width="1792" height="2400" /></div>
         </div>
       </div>
     </article>
@@ -542,24 +578,24 @@
     <!-- Masonry,natürliche Bildgröße, kein Beschneiden -->
     <div class="columns-2 md:columns-3 lg:columns-4 gap-3 reveal" role="list" aria-label="Bildergalerie">
 
-      <div class="gallery-wrap" role="listitem"><img draggable="false" src="Bilder/Lilacpoint_3.jpeg"          alt="Siam Old Style Lilacpoint"          loading="lazy" /></div>
-      <div class="gallery-wrap" role="listitem"><img draggable="false" src="Bilder/Russischblau_Bluepoint_1.jpeg" alt="Russisch Blau"                    loading="lazy" /></div>
-      <div class="gallery-wrap" role="listitem"><img draggable="false" src="Bilder/Sealpoint_2.jpeg"            alt="Siam Sealpoint"                    loading="lazy" /></div>
-      <div class="gallery-wrap" role="listitem"><img draggable="false" src="Bilder/Lilacpoint_4.jpeg"          alt="Siam Old Style Lilacpoint"          loading="lazy" /></div>
-      <div class="gallery-wrap" role="listitem"><img draggable="false" src="Bilder/Russischblau_Bluepoint_2.jpeg" alt="Russisch Blau"                   loading="lazy" /></div>
-      <div class="gallery-wrap" role="listitem"><img draggable="false" src="Bilder/Sealpoint_Bluepoint_1.jpeg" alt="Sialm Sealpoint und Bluepoint"      loading="lazy" /></div>
-      <div class="gallery-wrap" role="listitem"><img draggable="false" src="Bilder/Lilac-Sealpoint_1.jpeg"     alt="Siam Lilac Sealpoint"              loading="lazy" /></div>
-      <div class="gallery-wrap" role="listitem"><img draggable="false" src="Bilder/Sealpoint_Bluepoint_2.jpeg" alt="Siam Sealpoint und Bluepoint"       loading="lazy" /></div>
-      <div class="gallery-wrap" role="listitem"><img draggable="false" src="Bilder/Lilac-Sealpoint_2.jpeg"     alt="Siam Lilac Sealpoint"              loading="lazy" /></div>
-      <div class="gallery-wrap" role="listitem"><img draggable="false" src="Bilder/Sealpoint_Bluepoint_3.jpeg" alt="Siam Sealpoint und Bluepoint"       loading="lazy" /></div>
-      <div class="gallery-wrap" role="listitem"><img draggable="false" src="Bilder/Mama_Lilac-Sealpoint_3.jpeg" alt="Siam Old Style"                   loading="lazy" /></div>
-      <div class="gallery-wrap" role="listitem"><img draggable="false" src="Bilder/Sealpoint_lilacpoint_.jpeg" alt="Siam Sealpoint und Lilacpoint"      loading="lazy" /></div>
-      <div class="gallery-wrap" role="listitem"><img draggable="false" src="Bilder/lilacpoint_1.jpeg"          alt="Siam Lilacpoint"                   loading="lazy" /></div>
-      <div class="gallery-wrap" role="listitem"><img draggable="false" src="Bilder/Sealpoint_lilacpoint_2.jpeg" alt="Siam Sealpoint Lilacpoint"         loading="lazy" /></div>
-      <div class="gallery-wrap" role="listitem"><img draggable="false" src="Bilder/SealpointKitten_1.jpeg"     alt="Junges Siam Kätzchen"              loading="lazy" /></div>
-      <div class="gallery-wrap" role="listitem"><img draggable="false" src="Bilder/lilac_cinemon_1.jpeg"       alt="Siam Lilac Cinnamon"               loading="lazy" /></div>
-      <div class="gallery-wrap" role="listitem"><img draggable="false" src="Bilder/Sealpointkitten_2.jpeg"     alt="Junges Siam Kätzchen"              loading="lazy" /></div>
-      <div class="gallery-wrap" role="listitem"><img draggable="false" src="Bilder/Lilac-Sealpoint_4.jpeg"     alt="Siam Lilac Sealpoint"              loading="lazy" /></div>
+      <div class="gallery-wrap" role="listitem"><img draggable="false" src="Bilder/Lilacpoint_3.jpeg"             alt="Siam Old Style Lilacpoint"             loading="lazy" width="768"  height="1376" /></div>
+      <div class="gallery-wrap" role="listitem"><img draggable="false" src="Bilder/Russischblau_Bluepoint_1.jpeg" alt="Russisch Blau Katze Portrait"       loading="lazy" width="1792" height="2400" /></div>
+      <div class="gallery-wrap" role="listitem"><img draggable="false" src="Bilder/Sealpoint_2.jpeg"              alt="Siam Old Style Sealpoint"           loading="lazy" width="768"  height="1376" /></div>
+      <div class="gallery-wrap" role="listitem"><img draggable="false" src="Bilder/Lilacpoint_4.jpeg"             alt="Siam Old Style Lilacpoint"          loading="lazy" width="768"  height="1376" /></div>
+      <div class="gallery-wrap" role="listitem"><img draggable="false" src="Bilder/Russischblau_Bluepoint_2.jpeg" alt="Russisch Blau Bluepoint"            loading="lazy" width="1792" height="2400" /></div>
+      <div class="gallery-wrap" role="listitem"><img draggable="false" src="Bilder/Sealpoint_Bluepoint_1.jpeg"   alt="Siam Sealpoint und Bluepoint"       loading="lazy" width="896"  height="1200" /></div>
+      <div class="gallery-wrap" role="listitem"><img draggable="false" src="Bilder/Lilac-Sealpoint_1.jpeg"       alt="Siam Lilacpoint Sealpoint"          loading="lazy" width="768"  height="1376" /></div>
+      <div class="gallery-wrap" role="listitem"><img draggable="false" src="Bilder/Sealpoint_Bluepoint_2.jpeg"   alt="Siam Sealpoint und Bluepoint"       loading="lazy" width="896"  height="1200" /></div>
+      <div class="gallery-wrap" role="listitem"><img draggable="false" src="Bilder/Lilac-Sealpoint_2.jpeg"       alt="Siam Lilacpoint Sealpoint"          loading="lazy" width="768"  height="1376" /></div>
+      <div class="gallery-wrap" role="listitem"><img draggable="false" src="Bilder/Sealpoint_Bluepoint_3.jpeg"   alt="Siam Sealpoint und Bluepoint"       loading="lazy" width="896"  height="1200" /></div>
+      <div class="gallery-wrap" role="listitem"><img draggable="false" src="Bilder/Mama_Lilac-Sealpoint_3.jpeg"  alt="Siam Old Style Katze"               loading="lazy" width="896"  height="1200" /></div>
+      <div class="gallery-wrap" role="listitem"><img draggable="false" src="Bilder/Sealpoint_lilacpoint_.jpeg"   alt="Siam Sealpoint und Lilacpoint"      loading="lazy" width="896"  height="1200" /></div>
+      <div class="gallery-wrap" role="listitem"><img draggable="false" src="Bilder/lilacpoint_1.jpeg"            alt="Siam Old Style Lilacpoint"          loading="lazy" width="768"  height="1376" /></div>
+      <div class="gallery-wrap" role="listitem"><img draggable="false" src="Bilder/Sealpoint_lilacpoint_2.jpeg"  alt="Siam Sealpoint Lilacpoint"          loading="lazy" width="896"  height="1200" /></div>
+      <div class="gallery-wrap" role="listitem"><img draggable="false" src="Bilder/SealpointKitten_1.jpeg"       alt="Junges Siam Old Style Kätzchen"     loading="lazy" width="768"  height="1376" /></div>
+      <div class="gallery-wrap" role="listitem"><img draggable="false" src="Bilder/lilac_cinemon_1.jpeg"         alt="Siam Lilacpoint und Cinnamonpoint"  loading="lazy" width="896"  height="1200" /></div>
+      <div class="gallery-wrap" role="listitem"><img draggable="false" src="Bilder/Sealpointkitten_2.jpeg"       alt="Junges Siam Old Style Kätzchen"     loading="lazy" width="768"  height="1376" /></div>
+      <div class="gallery-wrap" role="listitem"><img draggable="false" src="Bilder/Lilac-Sealpoint_4.jpeg"       alt="Siam Lilacpoint Sealpoint Katze"    loading="lazy" width="768"  height="1376" /></div>
 
     </div>
 
@@ -648,7 +684,7 @@
   <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-5">
 
     <div class="flex items-center gap-2.5">
-      <img draggable="false" src="Bilder/Logo.jpeg" alt="OrangeNight Cats Logo" class="w-8 h-8 rounded-lg object-cover" loading="lazy" />
+      <img draggable="false" src="Bilder/Logo.jpeg" alt="OrangeNight Cats Logo" class="w-8 h-8 rounded-lg object-cover" loading="lazy" width="768" height="1376" />
       <span class="font-serif text-sm font-semibold" style="color:#E8A83E">OrangeNight</span>
       <span class="font-serif text-sm font-light text-cream/52">Cats</span>
     </div>
